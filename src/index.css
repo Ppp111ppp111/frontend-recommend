@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FFD814;
+  --color-primary-dark: #F7CA00;
+  --color-secondary: #232F3E;
+  --color-background: #EAEDED;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F7FAFA;
+
+  --font-sans: 'Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: #0F1111;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 active:scale-95 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-black border border-primary-dark shadow-sm;
+  }
+
+  .card {
+    @apply bg-surface rounded-sm p-4 border border-gray-200 hover:shadow-lg transition-all duration-200;
+  }
+
+  /* Utility for Amazon-style links */
+  .link-action {
+    @apply text-[#007185] hover:text-[#c7511f] hover:underline cursor-pointer;
+  }
+}
