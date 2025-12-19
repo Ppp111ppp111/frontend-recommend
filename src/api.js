@@ -26,12 +26,14 @@ console.log('Product API URL:', productApi.defaults.baseURL);
 console.log('Recommend API URL:', recommendApi.defaults.baseURL);
 
 export const getProducts = async () => {
-    const response = await productApi.get('/products');
+    // The baseURL (from VITE_PRODUCT_API_URL) already includes the endpoint (e.g. /products)
+    const response = await productApi.get('');
     return response.data;
 };
 
 export const getRecommendations = async (history) => {
-    const response = await recommendApi.post('/recommend', { history });
+    // The baseURL (from VITE_RECOMMEND_API_URL) already includes the endpoint
+    const response = await recommendApi.post('', { history });
     return response.data;
 };
 
